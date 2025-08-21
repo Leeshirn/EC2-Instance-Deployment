@@ -26,4 +26,11 @@ The following is a project on how to set up an EC2 instance, install apache to d
   sudo systemctl start httpd  # get the server running
   sudo systemctl enable httpd # your webserver starts automatically every time ec2 reboots
 
-### 
+### Deploying the Webpage
+* Use the following command in your instance to display your webpage:
+   ```bash
+   cat my_local_file.html | ssh -i /path/to/your-key.pem user-name@public-ip-address 'sudo tee /var/www/html/index.html'
+ 
+Congratulations!!! You have successfully deployed a webpage in your EC2 instance. 
+Remember to clean up your resouces if the project is for learning purposes.
+
